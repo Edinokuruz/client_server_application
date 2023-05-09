@@ -1,0 +1,4 @@
+.idea
+cmake-build-debug
+ProgramFirst_Client/nlohmann_json
+ProgramFirst_Client/cmake-build-debug

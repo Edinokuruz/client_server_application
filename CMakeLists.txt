@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.25)
+project(Client_server_application)
+
+add_subdirectory(ProgramFirst_Client ProgramFirst_Client/CMakeLists.txt)
+add_subdirectory(ProgramSecond_Server ProgramSecond_Server/CMakeLists.txt)
