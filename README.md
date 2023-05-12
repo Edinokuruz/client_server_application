@@ -2,9 +2,9 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/Edinokuruz/client_server_application?color=blueviolet)
 ![GitHub author](https://img.shields.io/badge/made_on-C++-blueviolet)
 
-![GitHub repo file count](https://img.shields.io/github/directory-file-count/Edinokuruz/client_server_application?color=informational&label=Main%20dir)
-![GitHub repo file count (custom path)](https://img.shields.io/github/directory-file-count/Edinokuruz/client_server_application/ProgramFirst_Client?color=informational&label=First%20program%20dir)
-![GitHub repo file count (custom path)](https://img.shields.io/github/directory-file-count/Edinokuruz/client_server_application/ProgramSecond_Server?color=informational&label=Second%20program%20dir)
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/Edinokuruz/client_server_application?color=informational&label=Files%20Main%20dir)
+![GitHub repo file count (custom path)](https://img.shields.io/github/directory-file-count/Edinokuruz/client_server_application/ProgramFirst_Client?color=informational&label=Files%20First%20program%20dir)
+![GitHub repo file count (custom path)](https://img.shields.io/github/directory-file-count/Edinokuruz/client_server_application/ProgramSecond_Server?color=informational&label=Files%20Second%20program%20dir)
 ## __Название проекта | Project name__ 
 ![GitHub author](https://img.shields.io/badge/-RUS-blue)  
 Приложение клиент - сервер.  
@@ -12,7 +12,7 @@
 Client-server application.
 ___
 ## __Технологии | Technologies__ 
-![GitHub author](https://img.shields.io/badge/C++-21-darkblue)  
+![GitHub author](https://img.shields.io/badge/C++-23-darkblue)  
 ![GitHub author](https://img.shields.io/badge/CMake-3.25-darkblue)
 https://cmake.org/  
 ![GitHub author](https://img.shields.io/badge/JSON-3.11.2-darkblue)
@@ -50,8 +50,9 @@ Program No.2.
 Waits for data from Program #1. When receiving data, an analysis is performed of how many characters the transmitted value consists of. If it is more than 2 characters and if it is a multiple of 32, it displays a message about the received data, otherwise an error message is displayed. Then the program continues to wait for data.
 ___  
 ## __Скриншот работы программы | Working program screenshot__
-![Screenshot 1](https://raw.githubusercontent.com/Edinokuruz/Lesson3/master/Screenshots/1.bmp?token=GHSAT0AAAAAACCNV7GZLRC7WTY7IXCJMBXOZC6IZ5A)
-![Screenshot 2](https://raw.githubusercontent.com/Edinokuruz/Lesson3/master/Screenshots/2.bmp?token=GHSAT0AAAAAACCNV7GZJAM2BWE3VO4TL7E2ZC6I2XA)
+![Screenshot 1](https://github.com/Edinokuruz/client_server_application/blob/master/1.png)
+
+![Screenshot 2](https://github.com/Edinokuruz/client_server_application/blob/master/2.png)
 ___
 ## __Сборка и запуск проекта | Project building and running__
 * Шаг 1: Сборка проекта | Step 1: Build the project.  
