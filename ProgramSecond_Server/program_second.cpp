@@ -49,6 +49,7 @@ int main()
     //Key variables for all program.
     int erStat;								    // Keeps socket errors status.
 
+    //Struct for Socket info keeping.
     sockaddr_in servInfo;
     sockaddr_in clientInfo;
 
@@ -62,9 +63,14 @@ int main()
         return 1;
     }
 
-    //WinSock initialization.
-    erStat = WSAStartup(MAKEWORD(2,2), &wsData);
+    //WinSock initialization. Download WinSock library.
 
+    //Download WinSock library function.
+    //first parameter: WORD DLLVersion = MAKEWORD(2,2) - WinSock library version.
+    //second parameter: &wsData - reference to WSDATA struct.
+    erStat = WSAStartup(MAKEWORD(2,2), &wsData); //Download WinSock library function.
+
+    //Check library download success.
     if(erStat != 0)
     {
         std::cout << "Error WinSock version initialization #";
@@ -94,10 +100,11 @@ int main()
     //Server socket binding
     ZeroMemory(&servInfo, sizeof(servInfo));	        //Initializing servInfo structure.
 
-    servInfo.sin_family = AF_INET;                      //Address family.
+    servInfo.sin_family = AF_INET;                      //Protocol family.
     servInfo.sin_addr = ipToNum;                        //IP address.
-    servInfo.sin_port = htons(PORT_NUM);        //Port number.
+    servInfo.sin_port = htons(PORT_NUM);        //Port for receiving data. Port number.
 
+    //Address binding to socket.
     erStat = bind(ServSock, (sockaddr*)&servInfo, sizeof(servInfo));
 
     if(erStat != 0)
@@ -127,13 +134,14 @@ int main()
         std::cout << "Listening..." << std::endl;
     }
 
-    //Client socket creation and acception in case of connection.
+    //Client socket creation and acception in case of connection. Socket for keeping connection with Client.
     ZeroMemory(&clientInfo, sizeof(clientInfo));	    //Initializing clientInfo structure.
 
     int clientInfoSize = sizeof(clientInfo);
 
     SOCKET ClientConn = accept(ServSock, (sockaddr*)&clientInfo, &clientInfoSize);
 
+    //Checking connection with Client.
     if(ClientConn == INVALID_SOCKET)
     {
         std::cout << "Client detected, but can't connect to a client. Error # " << WSAGetLastError() << std::endl;

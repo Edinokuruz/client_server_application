@@ -201,15 +201,21 @@ int main()
     //Key variables for all program.
     int erStat;										//For checking errors in sockets functions.
 
+    //Struct for Socket info keeping.
     sockaddr_in servInfo;
 
     //IP in string format to numeric format for socket functions. Data is in "ipToNum"
     in_addr ipToNum;
     inet_pton(AF_INET, SERVER_IP, &ipToNum);
 
-    //WinSock initialization.
-    erStat = WSAStartup(MAKEWORD(2,2), &wsData);
+    //WinSock initialization. Download WinSock library.
 
+    //Download WinSock library function.
+    //first parameter: WORD DLLVersion = MAKEWORD(2,2) - WinSock library version.
+    //second parameter: &wsData - reference to WSDATA struct.
+    erStat = WSAStartup(MAKEWORD(2,2), &wsData);  //Download WinSock library function.
+
+    //Check library download success.
     if(erStat != 0)
     {
         std::cout << "Error WinSock version initialization #";
@@ -221,7 +227,7 @@ int main()
         std::cout << "WinSock initialization is OK" << std::endl;
     }
 
-    //Client socket initialization.
+    //Client socket initialization for Server connection.
     SOCKET ClientSock = socket(AF_INET, SOCK_STREAM, NULL);
 
     if(ClientSock == INVALID_SOCKET)
@@ -236,13 +242,14 @@ int main()
     }
 
     //Establishing a connection to Server.
-    ZeroMemory(&servInfo, sizeof(servInfo));
+    ZeroMemory(&servInfo, sizeof(servInfo));                    //Initializing servInfo structure.
 
-    servInfo.sin_family = AF_INET;                              //Address family.
+    servInfo.sin_family = AF_INET;                              //Protocol family.
     servInfo.sin_addr = ipToNum;                                //IP address.
-    servInfo.sin_port = htons(SERVER_PORT_NUM);         //Port number.
-    erStat = connect(ClientSock, (sockaddr*)&servInfo, sizeof(servInfo));
+    servInfo.sin_port = htons(SERVER_PORT_NUM);         //Port for receiving data. Port number.
+    erStat = connect(ClientSock, (sockaddr*)&servInfo, sizeof(servInfo)); //Connection to server function.
 
+    //Checking connection status.
     if(erStat != 0)
     {
         std::cout << "Connection to Server is FAILED. Error # " << WSAGetLastError() << std::endl;
