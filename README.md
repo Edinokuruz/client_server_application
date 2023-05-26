@@ -53,24 +53,4 @@ ___
 ![Screenshot 1](https://github.com/Edinokuruz/client_server_application/blob/master/1.png)
 
 ![Screenshot 2](https://github.com/Edinokuruz/client_server_application/blob/master/2.png)
-___
-## __Сборка и запуск проекта | Project building and running__
-* Шаг 1: Сборка проекта | Step 1: Build the project.  
-  * Если компилятор Visual Studio будет использован | If Visual Studio compiler will be used:  
-    * Для версии x64 | For x64 version:  
-`cmake -A x64 -S . -B "build64"`  
-`cmake --build build64 --config Release`  
-    * Для версии x32 | For x32 version:  
-`cmake -A Win32 -S . -B "build32"`  
-`cmake --build build32 --config Release`  
-  * Если другие компиляторы | In other compilers:  
-`cmake -S . -B "build"`  
-`cmake --build build --config Release`  
-* Шаг 2: скопировать файлы: | Step 2: copy files:  
-`.\bin\requests.json`, `.\bin\config.json`, `.\bin\answers.json` and `.\bin\resources` folder  
-from `.\bin` folder  
-to the `.\bin\Release` folder.  
-* Step 3: run the application:  
-`.\bin\Release\search-engine`  
-___
 
